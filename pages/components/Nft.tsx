@@ -1,6 +1,14 @@
 import React from 'react'
+ 
+type NftProps = {
 
-const Nft = () => {
+  price: number
+  image: string
+  title: string
+}
+
+
+const Nft = ({price,image,title}:NftProps) => {
   return (
     <div>Nft</div>
   )
