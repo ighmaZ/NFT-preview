@@ -43,6 +43,7 @@ const Nft = ({price,image,title}:NftProps) => {
    <VStack>
     <Text
      color="#61cf35"
+     paddingInline="2"
    >Highest Bid</Text>
     <Text
     color="white"
@@ -55,11 +56,13 @@ const Nft = ({price,image,title}:NftProps) => {
    <VStack>
     <Text
      color="#94b7dc"
+
    >Auction Ends In</Text>
     <Text
     color="white"
     fontSize="md"
     fontWeight="extrabold"
+    letterSpacing='2px'
     >6:12:8:0s</Text>
    </VStack>
     </Box>
