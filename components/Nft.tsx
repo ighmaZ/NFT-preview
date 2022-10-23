@@ -1,5 +1,6 @@
-import { Badge, Box ,Text, HStack,Button, Image, Center, VStack} from '@chakra-ui/react'
 import React from 'react'
+import { useEffect, useState } from 'react' 
+import { Badge, Box ,Text, HStack,Button, Image, Center, VStack} from '@chakra-ui/react'
 
 import {  StarIcon } from '@chakra-ui/icons'
  
@@ -9,6 +10,18 @@ type NftProps = {
   image: string
   title: string
 }
+
+
+
+
+const [timer, setTimer] = useState(59);  // for timer change
+
+useEffect(()=> {
+
+ const interval = setInterval(() => {
+   setTimer(timer - 1)} , 1000)
+return () =>  clearInterval(interval); 
+},[timer])
 
 
 const Nft = ({price,image,title}:NftProps) => {
@@ -63,7 +76,7 @@ const Nft = ({price,image,title}:NftProps) => {
     fontSize="md"
     fontWeight="extrabold"
     letterSpacing='2px'
-    >6:12:8:0s</Text>
+    >6:12:8:{timer}s</Text>
    </VStack>
     </Box>
 </HStack>
