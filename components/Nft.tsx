@@ -16,7 +16,7 @@ const Nft = ({price,image,title}:NftProps) => {
    <Box w="300px" margin="50px" overflow="hidden" shadow="sm" borderWidth="8px" borderColor="#112135" bg="#112135"> 
    
    <HStack margin="5" justifyContent="space-between">
-<Badge variant='solid' rounded='full' p={2}   bg="#081321" border="solid"  borderColor="#3f4860" >HOT DEAL</Badge>
+<Badge variant='solid' rounded='full' p={2}   bg="#081321" border="solid" textColor="#3f4860" borderColor="#3f4860" >HOT DEAL</Badge>
 <Badge variant='solid' rounded='full' p={2}  bg="#081321" border="solid"  borderColor="#5d432b" >AUCTION</Badge>
 
    </HStack>
@@ -26,22 +26,23 @@ const Nft = ({price,image,title}:NftProps) => {
 <Text 
  bgGradient="linear(to-l, #7928CA, #FF0080)"
   bgClip="text"
+  marginLeft="1"
   fontSize="2xl"
   fontWeight="extrabold">{title}</Text>
   <HStack>
     <StarIcon color="red.500"  />
     <Text color='white '>92</Text>
 
-  </HStack>
+  </HStack >
     </HStack>
-    <Text color="blue.300" fontSize="sm" >Enoch Citizen</Text>
+    <Text marginLeft="2" color="blue.300" fontSize="sm" >Enoch Citizen</Text>
 
 <HStack justifyContent="space-evenly" margin="4">
 
-    <Box border="solid" borderColor="#3f4860"  padding="2">
+    <Box border="solid" borderColor="#352176"  padding="1"  background="#141b2d">
    <VStack>
     <Text
-     color="green.500"
+     color="#61cf35"
    >Highest Bid</Text>
     <Text
     color="white"
@@ -50,16 +51,16 @@ const Nft = ({price,image,title}:NftProps) => {
     >${price}</Text>
    </VStack>
     </Box>
-    <Box border="solid" borderColor="#3f4860" padding="2" width="8rem">
+    <Box border="solid" borderColor="#60291e" padding="1" width="8rem">
    <VStack>
     <Text
-     color="green.500"
-   >Highest Bid</Text>
+     color="#94b7dc"
+   >Auction Ends In</Text>
     <Text
     color="white"
-    fontSize="sm"
+    fontSize="md"
     fontWeight="extrabold"
-    >${price}</Text>
+    >6:12:8:0s</Text>
    </VStack>
     </Box>
 </HStack>
