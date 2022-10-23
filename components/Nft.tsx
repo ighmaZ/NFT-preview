@@ -1,8 +1,8 @@
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 
 import { Badge, Box ,Text, HStack,Button, Image, Center, VStack} from '@chakra-ui/react'
-
 import {  StarIcon } from '@chakra-ui/icons'
+import { clearInterval } from 'timers'
  
 type NftProps = {
 
@@ -11,11 +11,19 @@ type NftProps = {
   title: string
 }
 
-
-
-
 const Nft = ({price,image,title}:NftProps) => {
 
+
+  const [counter , setCounter] = useState(59)
+
+  useEffect(() => {
+    setInterval(() => {setCounter(counter - 1)}, 1000);
+  },[counter])
+  
+
+
+
+  
 
   return (
    <Box w="300px" margin="50px" overflow="hidden" shadow="sm" borderWidth="8px" borderColor="#112135" bg="#112135"> 
@@ -68,7 +76,7 @@ const Nft = ({price,image,title}:NftProps) => {
     fontSize="md"
     fontWeight="extrabold"
     letterSpacing='2px'
-    >6:12:8:10s</Text>
+    >6:12:8:{counter}s</Text>
    </VStack>
     </Box>
 </HStack>
@@ -88,7 +96,3 @@ margin={1}
 }
 
 export default Nft
-
-function useState(arg0: number): [any, any] {
-  throw new Error('Function not implemented.')
-}
