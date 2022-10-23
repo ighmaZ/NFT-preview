@@ -1,8 +1,10 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, SimpleGrid } from '@chakra-ui/react'
+import { Box, ChakraProvider, SimpleGrid  } from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import Nft from '../components/Nft'
+
+
 
 
 
@@ -11,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
 
+
     <ChakraProvider>
+<Box bg="#081321">
 <Navbar/>
 <SimpleGrid  columns={{sm: 1, md: 3}} gap={2}>
 <Nft
@@ -46,6 +50,7 @@ price={312}
 
       <Component {...pageProps} />
       </SimpleGrid>
+      </Box>
     </ChakraProvider>
 
   )
